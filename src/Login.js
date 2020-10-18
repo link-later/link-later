@@ -14,7 +14,6 @@ const Div = styled.div`
 
 const Login = (props) => {
   const { clicked, handleClick } = WithClicker();
-  console.log(handleClick);
   return (
     <Div>
       {props.children}
