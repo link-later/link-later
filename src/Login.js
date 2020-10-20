@@ -1,23 +1,18 @@
 import React from 'react';
-import styled from 'styled-components';
 import WithClicker from './HOCs/WithClicker';
-
-const Div = styled.div`
-  border-radius: 3px;
-  border: 2px solid firebrick;
-  padding: 12px;
-  margin: 10px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-`;
+import { Div, Form, Input } from './style';
 
 const Login = (props) => {
-  const { clicked, handleClick } = WithClicker();
+  const { clicked, handleClick, user, pass } = WithClicker();
   return (
     <Div>
-      {props.children}
-      <button onClick={handleClick}>Click</button>
+      <Form>
+        Username
+        <Input ref={user}></Input>
+        Password
+        <Input ref={pass}></Input>
+        <button onClick={handleClick}>Click</button>
+      </Form>
       {clicked ? 'clicked' : 'unclicked'}
     </Div>
   );
