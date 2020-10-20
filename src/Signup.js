@@ -2,11 +2,14 @@ import React from 'react';
 import WithClicker from './HOCs/WithClicker';
 import { Div, Form, Input } from './style';
 
-const Login = (props) => {
-  const { clicked, handleClick, user, pass } = WithClicker();
+const Signup = (props) => {
+  const { clicked, handleClick, user, pass, email } = WithClicker();
   return (
     <Div>
+      Sign up!
       <Form>
+        Email
+        <Input ref={email}></Input>
         Username
         <Input ref={user}></Input>
         Password
@@ -18,4 +21,4 @@ const Login = (props) => {
   );
 };
 
-export default Login;
+export default Signup;
