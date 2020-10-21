@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import WithClicker from './HOCs/WithClicker';
 import { Div, Form, Input } from './style';
+import UserContext from './Context.js';
 
 const Login = (props) => {
-  const { clicked, handleClick, user, pass } = WithClicker();
+  const context = useContext(UserContext);
+  const { checkUser, handleClick, user, pass } = WithClicker();
   return (
     <Div>
       <Form>
@@ -13,7 +15,7 @@ const Login = (props) => {
         <Input ref={pass}></Input>
         <button onClick={handleClick}>Click</button>
       </Form>
-      {clicked ? 'clicked' : 'unclicked'}
+      {checkUser ? 'clicked' : 'unclicked'}
     </Div>
   );
 };
