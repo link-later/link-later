@@ -1,3 +1,6 @@
 import React from 'react';
-const UserContext = React.createContext();
+const UserContext = React.createContext({
+  checkUser: false,
+  setCheckUser: () => {},
+});
 export default UserContext;
