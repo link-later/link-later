@@ -1,19 +1,20 @@
-import React from 'react';
-import WithClicker from './HOCs/WithClicker';
+import React, { useContext, useRef } from 'react';
+import WithClicker from './HOCs/Auth';
 import { Div, Form, Input } from './style';
+import UserContext from './Context.js';
 
 const Login = (props) => {
-  const { clicked, handleClick, user, pass } = WithClicker();
+  const { checkUser, setCheckUser } = useContext(UserContext);
   return (
     <Div>
       <Form>
         Username
-        <Input ref={user}></Input>
+        <Input ref={props.user}></Input>
         Password
-        <Input ref={pass}></Input>
-        <button onClick={handleClick}>Click</button>
+        <Input ref={props.pass}></Input>
+        <button onClick={props.handleClick}>Click</button>
       </Form>
-      {clicked ? 'clicked' : 'unclicked'}
+      {checkUser ? 'clicked' : 'unclicked'}
     </Div>
   );
 };
