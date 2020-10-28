@@ -6,7 +6,9 @@ import Auth from './HOCs/Auth';
 
 function App() {
   const [checkUser, setCheckUser] = useState(false);
-  const value = { checkUser, setCheckUser };
+  const [userId, setUserId] = useState(null);
+  const [data, setData] = useState([]);
+  const value = { checkUser, setCheckUser, userId, setUserId, data, setData };
   return (
     <UserContext.Provider value={value}>
       <Switch>
